@@ -2,16 +2,19 @@ spring:
     cloud:
         gateway:
             routes:
+                -   id: auth-service
+                    predicates:
+                        - Path=/auth/login
+                    uri: lb://AUTH-SERVICE
+                    filters:
+                        - RewritePath=/auth/(?<segment>.*), /$\{segment}
+
                 -   id: api-service
                     predicates:
                         - Path=/api/**
                     uri: lb://API-SERVICE
                     filters:
                         - RewritePath=/api/(?<segment>.*), /$\{segment}
-
-                -   id: auth-service
-                    predicates:
-                        - Path=/auth/**
-                    uri: lb://AUTH-SERVICE
-                    filters:
-                        - RewritePath=/auth/(?<segment>.*), /$\{segment}
+                        - name: JwtAuthenticationFilter
+                          args:
+                              secretKey: ${jwt.secret.key}
