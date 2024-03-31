@@ -4,7 +4,7 @@ server:
 
 spring:
     application:
-        name: api-gateway
+        name: gateway-service
     profiles:
         include:
             - secret

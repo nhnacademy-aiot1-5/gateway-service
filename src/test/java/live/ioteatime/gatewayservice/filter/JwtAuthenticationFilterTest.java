@@ -1,10 +1,10 @@
-package live.ioteatime.apigateway.filter;
+package live.ioteatime.gatewayservice.filter;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 import java.util.stream.Stream;
-import live.ioteatime.apigateway.filter.JwtAuthenticationFilter.Config;
+import live.ioteatime.gatewayservice.filter.JwtAuthenticationFilter.Config;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

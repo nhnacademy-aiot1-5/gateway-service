@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>live.ioteatime</groupId>
-	<artifactId>api-gateway</artifactId>
+	<artifactId>gateway-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-gateway</name>
-	<description>API Gateway project</description>
+	<name>gateway-service</name>
+	<description>API gateway service project</description>
 
 	<properties>
 		<java.version>11</java.version>

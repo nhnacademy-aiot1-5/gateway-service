@@ -1,10 +1,10 @@
-package live.ioteatime.apigateway.filter;
+package live.ioteatime.gatewayservice.filter;
 
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import java.util.List;
-import live.ioteatime.apigateway.exception.TokenException;
-import live.ioteatime.apigateway.filter.JwtAuthenticationFilter.Config;
+import live.ioteatime.gatewayservice.exception.TokenException;
+import live.ioteatime.gatewayservice.filter.JwtAuthenticationFilter.Config;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
