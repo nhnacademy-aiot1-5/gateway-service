@@ -1,0 +1,16 @@
+server:
+    shutdown: graceful
+    port: 8080
+
+spring:
+    application:
+        name: gateway-service
+    profiles:
+        include:
+            - secret
+            - route
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://${discovery.username}:${discovery.password}@${discovery.domain}:8761/eureka
