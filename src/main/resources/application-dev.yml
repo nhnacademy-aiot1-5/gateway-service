@@ -1,7 +1,6 @@
-discovery:
-    domain: localhost
-    username: test
-    password: test
+eureka:
+    client:
+        enabled: false
 
 jwt:
     secret:
