@@ -7,8 +7,8 @@ spring:
         name: gateway-service
     profiles:
         include:
-            - secret
             - route
+        active: dev
 
 eureka:
     client:

@@ -1,0 +1,8 @@
+discovery:
+    domain: localhost
+    username: test
+    password: test
+
+jwt:
+    secret:
+        key: 9a4fba37a3a27c7ef90ff02c9a1e1fbdae28ebe48c22273d53c340d9e65b55712471ffd618d828ac8d62d8a8de19570c20980a56fad76c808b32aac22953ad85

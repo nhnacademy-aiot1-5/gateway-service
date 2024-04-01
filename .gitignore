@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Secret ###
-application-secret.yml
+src/main/resources/application-prod.yml
