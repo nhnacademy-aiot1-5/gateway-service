@@ -69,6 +69,7 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<Config
     }
 
     private List<String> getAuthorizations(ServerWebExchange exchange) {
+
         return exchange.getRequest()
                        .getHeaders()
                        .get(HttpHeaders.AUTHORIZATION);
