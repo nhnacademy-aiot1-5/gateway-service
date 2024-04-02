@@ -11,10 +11,18 @@ spring:
 
                 -   id: api-service
                     predicates:
+                        - Path=/api/users
+                        - Method=POST
+                    uri: lb://API-SERVICE
+                    filters:
+                        - RewritePath=/api/(?<segment>.*), /$\{segment}
+
+                -   id: api-service-with-auth
+                    predicates:
                         - Path=/api/**
                     uri: lb://API-SERVICE
                     filters:
                         - RewritePath=/api/(?<segment>.*), /$\{segment}
-                        - name: JwtAuthenticationFilter
-                          args:
-                              secretKey: ${jwt.secret.key}
+                        -   name: JwtAuthenticationFilter
+                            args:
+                                secretKey: ${jwt.secret.key}
