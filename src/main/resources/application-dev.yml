@@ -1,7 +1,13 @@
-eureka:
-    client:
-        enabled: false
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
 
 jwt:
-    secret:
-        key: 9a4fba37a3a27c7ef90ff02c9a1e1fbdae28ebe48c22273d53c340d9e65b55712471ffd618d828ac8d62d8a8de19570c20980a56fad76c808b32aac22953ad85
+  secret:
+    key: 1a27dbb9701ab63e0eb065105468650da17d58f28ca25aae61b5927260866868cda612b26af8f95feac91928c583144a62f15bba616df8679c2734b2577ekk67
+
+discovery:
+  username: admin
+  password: admin
+  domain: localhost
