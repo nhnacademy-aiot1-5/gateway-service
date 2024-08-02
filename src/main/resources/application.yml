@@ -14,3 +14,8 @@ eureka:
     client:
         service-url:
             defaultZone: http://${discovery.username}:${discovery.password}@${discovery.domain}:8761/eureka
+
+logging:
+    level:
+        org:
+            springframework: DEBUG
