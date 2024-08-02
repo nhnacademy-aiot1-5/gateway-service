@@ -1,0 +1,13 @@
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+
+jwt:
+  secret:
+    key: ${SECRET_KEY}
+
+discovery:
+  username: ${DISCOVERY_ID}
+  password: ${DISCOVERY_PASSWORD}
+  domain: ${DISCOVERY_IP}
