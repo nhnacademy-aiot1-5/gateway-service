@@ -29,8 +29,10 @@ jobs:
 
     - name: Build and Push Docker Images
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/nhnacademy-final-project-gateway-service:${{ github.sha }} .
-        docker push ${{ secrets.DOCKER_USERNAME }}/nhnacademy-final-project-gateway-service:${{ github.sha }}
+        IMAGE_TAG=${{ github.sha }}
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/nhnacademy-final-project-gateway-service:$IMAGE_TAG .
+        docker push ${{ secrets.DOCKER_USERNAME }}/nhnacademy-final-project-gateway-service:$IMAGE_TAG
+        echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
     - name: Deploy to Cloud Server
       uses: appleboy/ssh-action@master
@@ -40,6 +42,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
+          export IMAGE_TAG=${{ github.sha }}
           SERVICE_NAME="gateway-service"
 
           COMPOSE_DIR="./projects/docker-compose"
