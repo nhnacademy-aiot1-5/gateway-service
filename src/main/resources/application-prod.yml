@@ -8,6 +8,6 @@ jwt:
     key: ${SECRET_KEY}
 
 discovery:
-  username: ${DISCOVERY_ID}
+  id: ${DISCOVERY_ID}
   password: ${DISCOVERY_PASSWORD}
-  domain: ${DISCOVERY_IP}
+  ip: ${DISCOVERY_IP}

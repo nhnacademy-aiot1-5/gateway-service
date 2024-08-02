@@ -13,7 +13,7 @@ spring:
 eureka:
     client:
         service-url:
-            defaultZone: http://${discovery.username}:${discovery.password}@${discovery.domain}:8761/eureka
+            defaultZone: http://${discovery.id}:${discovery.password}@${discovery.ip}:8761/eureka
 
 logging:
     level:
