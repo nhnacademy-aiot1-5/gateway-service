@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            export GATEWAY_IMAGE_TAG=${{ github.sha }}
+            echo "export GATEWAY_IMAGE_TAG=${{ github.sha }}" >> ~/.bashrc
             SERVICE_NAME="gateway-service"
             
             COMPOSE_DIR="./projects/docker-compose"
