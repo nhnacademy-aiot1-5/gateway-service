@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            grep -q 'export GATEWAY_IMAGE_TAG=' ~/.bashrc && sed -i 's/export GATEWAY_IMAGE_TAG=.*/export GATEWAY_IMAGE_TAG=${{ github.sha }}/' ~/.bashrc || echo 'export GATEWAY_IMAGE_TAG=${{ github.sha }}' >> ~/.bashrc
+            echo "GATEWAY_IMAGE_TAG=${{ github.sha }}" > .env
             source ~/.bashrc
             
             SERVICE_NAME="gateway-service"
